@@ -4,22 +4,31 @@ import java.sql.SQLOutput;
 
 public class Main  {
     public static void main(String[] args) {
-        Author surName = new Author();
-        Book warAndPeace = new Book(  " War And Peace" ,1867);
-        System.out.println("Книга называется  " +warAndPeace.getName1()+ " написал " + surName.name2+ " в "  +warAndPeace.getAge1()+  " году.");
-        System.out.println( "написал "  +  surName.getName2());
-        System.out.println("warAndPeace.name1  = " + warAndPeace.getName1());
-        System.out.println("warAndPeace.age1 =  "  + warAndPeace.getAge1());
+        Author levTolstoy = new Author("Lev" , "Tolstoy");
+        Book warAndPeace = new Book(  " War And Peace",levTolstoy,1867);
+        System.out.println("Книга называется  " +warAndPeace.getbookName()+ " написал " + levTolstoy + " в "  +warAndPeace.getYearOfBook()+  " году.");
+        System.out.println( "написал "  +  levTolstoy);
+        System.out.println("warAndPeace.name1  = " + warAndPeace.getbookName());
+        System.out.println("warAndPeace =  "  + warAndPeace.getYearOfBook());
         warAndPeace.setAge1(2000);
-        System.out.println("warAndPeace.getAge1 = " + warAndPeace.getAge1());
-        Book book = new Book("название книги book написал Vasya",1995);
-        Book book2 = new Book("Petya", 2001);
-        System.out.println("название книги book, написал Vasya в 1995 году");
-        System.out.println("название книги book2  написал  Petya в 2001 году");
-        book.setAge1(1998);
-        System.out.println("Вася написал книгу в " +book.getAge1()+ " году");
-    }
-}
+        System.out.println("warAndPeace.yearOfBook = " + warAndPeace.getYearOfBook());
+        Author vasyaPupkin =new Author("Vasya","Pupkin");
+        Book warAndWar = new Book("War And War",vasyaPupkin,1995);
+        System.out.println("Книга называется War And WAR , Написал  Vasya Pupkin в 1995");
+        Author petyaLupkin=new Author("Petya","Lupkin");
+        Book catAndDog = new Book("Cat and dog",petyaLupkin,2005);
+        System.out.println("Cat and dog= " +catAndDog.getYearOfBook());
+        System.out.println("книга называется Cat and dog написал Petya Lupkin в 2005");
+        catAndDog.setAge1(2016);
+        System.out.println(catAndDog.getYearOfBook());
+    }}
+
+
+
+
+
+
+
 
 
 
